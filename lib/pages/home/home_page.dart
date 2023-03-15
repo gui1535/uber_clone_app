@@ -27,7 +27,13 @@ class HomePage extends StatelessWidget {
                         width: 150,
                         height: 100,
                       ),
-                      Text('Fácil e rápido')
+                      Text(
+                        'Fácil e rápido',
+                        style: TextStyle(
+                            fontFamily: 'Pacifico',
+                            fontSize: 22,
+                            fontWeight: FontWeight.bold),
+                      )
                     ],
                   ),
                 ),
@@ -35,7 +41,8 @@ class HomePage extends StatelessWidget {
               SizedBox(height: 50),
               Text(
                 'SELECIONE SUA FUNÇÃO',
-                style: TextStyle(color: Colors.white),
+                style: TextStyle(
+                    fontFamily: 'OneDay', fontSize: 20, color: Colors.white),
               ),
               SizedBox(height: 30),
               CircleAvatar(
@@ -46,7 +53,7 @@ class HomePage extends StatelessWidget {
               SizedBox(height: 10),
               Text(
                 'Cliente',
-                style: TextStyle(color: Colors.white),
+                style: TextStyle(color: Colors.white, fontSize: 16),
               ),
               SizedBox(height: 30),
               CircleAvatar(
@@ -57,7 +64,7 @@ class HomePage extends StatelessWidget {
               SizedBox(height: 10),
               Text(
                 'Condutor',
-                style: TextStyle(color: Colors.white),
+                style: TextStyle(color: Colors.white, fontSize: 16),
               ),
             ],
           ),
