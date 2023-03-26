@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
+import 'package:uber_clone/pages/home/home_controller.dart';
 
 class HomePage extends StatelessWidget {
+  HomeController _con = new HomeController();
+
   @override
   Widget build(BuildContext context) {
+    // Init Controlller
+    _con.init(context);
+
     return Scaffold(
       body: SafeArea(
         child: Container(
@@ -14,11 +20,11 @@ class HomePage extends StatelessWidget {
               SizedBox(height: 50),
               _textSelectYourEnter(),
               SizedBox(height: 30),
-              _imageTypeUser('assets/img/pasajero.png'),
+              _imageTypeUser(context, 'assets/img/pasajero.png'),
               SizedBox(height: 10),
               _textTypeUser('Cliente'),
               SizedBox(height: 30),
-              _imageTypeUser('assets/img/driver.png'),
+              _imageTypeUser(context, 'assets/img/driver.png'),
               SizedBox(height: 10),
               _textTypeUser('Condutor')
             ],
@@ -70,11 +76,14 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Widget _imageTypeUser(String asset) {
-    return CircleAvatar(
-      backgroundImage: AssetImage(asset),
-      radius: 50,
-      backgroundColor: Colors.grey[900],
+  Widget _imageTypeUser(BuildContext context, String asset) {
+    return GestureDetector(
+      onTap: _con.goToLoginPage,
+      child: CircleAvatar(
+        backgroundImage: AssetImage(asset),
+        radius: 50,
+        backgroundColor: Colors.grey[900],
+      ),
     );
   }
 
